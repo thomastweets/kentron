@@ -1,0 +1,8 @@
+web:
+  image: nginx:latest
+  restart: always
+  volumes:
+    - /home/deploy/webserver/html:/usr/share/nginx/html:ro
+  environment:
+    - VIRTUAL_HOST=$WEBSERVER_DOMAIN
+    - VIRTUAL_PORT=80
