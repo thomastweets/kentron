@@ -1,0 +1,16 @@
+unifi:
+  image: jacobalberty/unifi:latest
+  restart: always
+  volumes:
+     - /home/deploy/unifi:/var/lib/unifi
+  environment:
+    - TZ=Europe/Amsterdam
+    - VIRTUAL_HOST=$UNIFI_DOMAIN
+    - VIRTUAL_PORT=8443
+  ports:
+    - "8080:8080"
+    - "8081:8081"
+    - "8443:8443"
+    - "8843:8843"
+    - "8880:8880"
+    - "3478:3478"
